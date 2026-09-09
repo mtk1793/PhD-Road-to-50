@@ -1,0 +1,76 @@
+{
+    "performance_comparison": {
+        "STATCOM": {
+            "device_name": "STATCOM",
+            "mean_squared_error": 516.646207368004,
+            "r2_score": -0.7400424308349391
+        },
+        "SVC": {
+            "device_name": "SVC",
+            "mean_squared_error": 516.646207368004,
+            "r2_score": -0.7400424308349391
+        },
+        "UPFC": {
+            "device_name": "UPFC",
+            "mean_squared_error": 516.646207368004,
+            "r2_score": -0.7400424308349391
+        }
+    },
+    "renewable_data_summary": {
+        "solar_power": {
+            "count": 1000.0,
+            "mean": 50.720024097464496,
+            "std": 8.567115207578729,
+            "min": 23.9975263832,
+            "25%": 44.622090060725,
+            "50%": 50.56478477255,
+            "75%": 57.331381071325,
+            "max": 74.7016433527
+        },
+        "wind_power": {
+            "count": 1000.0,
+            "mean": 30.5241906209232,
+            "std": 4.634604523319381,
+            "min": 16.9525888092,
+            "25%": 27.023243099675,
+            "50%": 30.4736868944,
+            "75%": 34.161169128975,
+            "max": 42.7972264483
+        }
+    },
+    "grid_data_summary": {
+        "grid_load": {
+            "count": 1000.0,
+            "mean": 100.18093871128949,
+            "std": 17.239868918007904,
+            "min": 53.9578614337,
+            "25%": 87.33754001932499,
+            "50%": 99.92924648545,
+            "75%": 112.92315684355,
+            "max": 158.5808935901
+        },
+        "grid_frequency": {
+            "count": 1000.0,
+            "mean": 49.9981280782229,
+            "std": 0.10271325254317096,
+            "min": 49.707055131,
+            "25%": 49.926257954625,
+            "50%": 50.0000184573,
+            "75%": 50.0666945411,
+            "max": 50.324309297
+        }
+    },
+    "key_findings": {
+        "effectiveness": "All FACTS devices show similar performance with negative R^2 scores, indicating potential for optimization.",
+        "shap_analysis": "SHAP analysis highlights the influence of solar and wind power on grid load predictions.",
+        "baseline_comparison": "Baseline metrics are required for a comprehensive comparison with traditional methods."
+    },
+    "limitations": [
+        "Current models show negative R^2 scores, suggesting the need for model refinement.",
+        "Lack of baseline metrics for comparison with traditional methods."
+    ],
+    "future_improvements": [
+        "Incorporate more advanced neural network architectures to improve prediction accuracy.",
+        "Collect and integrate baseline metrics for better performance evaluation."
+    ]
+}

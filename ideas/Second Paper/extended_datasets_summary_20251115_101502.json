@@ -1,0 +1,178 @@
+{
+  "generated_at": "2025-11-15T10:15:02.209186",
+  "datasets": {
+    "1year": {
+      "filepath": "E:\\One Drive\\OneDrive - Dalhousie University\\Google Drive\\PhD\\Papers\\Elsevir\\Second Paper\\extended_realtime_ieee39_1year_20251115_101501.csv",
+      "records": 8760,
+      "start_date": "2021-01-01 00:00:00",
+      "end_date": "2021-12-31 23:00:00",
+      "statistics": {
+        "wind": {
+          "min": 0.0,
+          "max": 411.0327040696287,
+          "mean": 18.21020026878007,
+          "std": 42.67885365992463
+        },
+        "solar": {
+          "min": 0.0,
+          "max": 235.41791954460783,
+          "mean": 14.280219539374539,
+          "std": 28.097611401688898
+        },
+        "load": {
+          "min": 145.5,
+          "max": 521.5957421921637,
+          "mean": 263.59496443408574,
+          "std": 77.75047529609488
+        },
+        "penetration": {
+          "min": 0.0,
+          "max": 63.72860875617351,
+          "mean": 8.33453880646399
+        },
+        "frequency": {
+          "min": 60.09057907174224,
+          "max": 60.5,
+          "mean": 60.499953262451115
+        },
+        "voltage": {
+          "min": 0.92,
+          "max": 1.08,
+          "mean": 0.9998689698146968
+        }
+      }
+    },
+    "2year": {
+      "filepath": "E:\\One Drive\\OneDrive - Dalhousie University\\Google Drive\\PhD\\Papers\\Elsevir\\Second Paper\\extended_realtime_ieee39_2year_20251115_101501.csv",
+      "records": 17520,
+      "start_date": "2021-01-01 00:00:00",
+      "end_date": "2022-12-31 23:00:00",
+      "statistics": {
+        "wind": {
+          "min": 0.0,
+          "max": 463.732026164609,
+          "mean": 18.149723198972072,
+          "std": 42.36608665140797
+        },
+        "solar": {
+          "min": 0.0,
+          "max": 236.05357492445634,
+          "mean": 14.482684974424322,
+          "std": 28.6771745140729
+        },
+        "load": {
+          "min": 145.5,
+          "max": 542.6889726710656,
+          "mean": 263.64945995066404,
+          "std": 77.68446889533544
+        },
+        "penetration": {
+          "min": 0.0,
+          "max": 69.60558016417312,
+          "mean": 8.356771918500357
+        },
+        "frequency": {
+          "min": 60.07159211702454,
+          "max": 60.5,
+          "mean": 60.49997554749526
+        },
+        "voltage": {
+          "min": 0.92,
+          "max": 1.08,
+          "mean": 0.9994508675152772
+        }
+      }
+    },
+    "3year": {
+      "filepath": "E:\\One Drive\\OneDrive - Dalhousie University\\Google Drive\\PhD\\Papers\\Elsevir\\Second Paper\\extended_realtime_ieee39_3year_20251115_101501.csv",
+      "records": 26280,
+      "start_date": "2021-01-01 00:00:00",
+      "end_date": "2023-12-31 23:00:00",
+      "statistics": {
+        "wind": {
+          "min": 0.0,
+          "max": 533.1193310866396,
+          "mean": 18.308164729514623,
+          "std": 42.06698366270359
+        },
+        "solar": {
+          "min": 0.0,
+          "max": 266.18231109329383,
+          "mean": 14.547819197474073,
+          "std": 28.721015111460154
+        },
+        "load": {
+          "min": 145.5,
+          "max": 542.1901333002025,
+          "mean": 263.5963632290829,
+          "std": 77.61277616052433
+        },
+        "penetration": {
+          "min": 0.0,
+          "max": 71.44206858316142,
+          "mean": 8.440816512103728
+        },
+        "frequency": {
+          "min": 60.02355428621185,
+          "max": 60.5,
+          "mean": 60.49998187040663
+        },
+        "voltage": {
+          "min": 0.92,
+          "max": 1.08,
+          "mean": 0.998679001719185
+        }
+      }
+    },
+    "5year": {
+      "filepath": "E:\\One Drive\\OneDrive - Dalhousie University\\Google Drive\\PhD\\Papers\\Elsevir\\Second Paper\\extended_realtime_ieee39_5year_20251115_101501.csv",
+      "records": 43800,
+      "start_date": "2021-01-01 00:00:00",
+      "end_date": "2025-12-30 23:00:00",
+      "statistics": {
+        "wind": {
+          "min": 0.0,
+          "max": 461.8858160042612,
+          "mean": 18.445416018611443,
+          "std": 42.59631559912832
+        },
+        "solar": {
+          "min": 0.0,
+          "max": 269.67147730315963,
+          "mean": 14.518817584909627,
+          "std": 28.66467609332169
+        },
+        "load": {
+          "min": 145.5,
+          "max": 543.2223457206939,
+          "mean": 263.48239944502143,
+          "std": 77.45707139430354
+        },
+        "penetration": {
+          "min": 0.0,
+          "max": 68.5168306718972,
+          "mean": 8.449963500766463
+        },
+        "frequency": {
+          "min": 60.042909328782734,
+          "max": 60.5,
+          "mean": 60.49998956413993
+        },
+        "voltage": {
+          "min": 0.92,
+          "max": 1.08,
+          "mean": 0.9988821121856394
+        }
+      }
+    }
+  },
+  "notes": [
+    "1-year dataset: 8,760 records - suitable for annual analysis",
+    "2-year dataset: 17,520 records - covers seasonal variations",
+    "3-year dataset: 26,280 records - ideal for AI model training",
+    "5-year dataset: 43,800 records - comprehensive long-term analysis",
+    "All datasets include: wind, solar, load, frequency, voltage, harmonics",
+    "Data is realistic with seasonal and daily patterns",
+    "Suitable for FACTS device performance evaluation"
+  ]
+}

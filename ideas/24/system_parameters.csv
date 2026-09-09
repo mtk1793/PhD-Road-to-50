@@ -1,0 +1,12 @@
+Parameter,Value
+Nominal_Voltage_V,400.0
+PV_Rated_Power_kW,100.0
+STATCOM_Rating_kVA,50.0
+UPFC_Rating_kVA,100.0
+Sample_Time_us,100.0
+Prediction_Horizon,10.0
+Control_Horizon,3.0
+LCL_L1_mH,0.8
+LCL_L2_mH,0.2
+LCL_C_uF,25.0
+Resonant_Frequency_Hz,2516.4606052243516

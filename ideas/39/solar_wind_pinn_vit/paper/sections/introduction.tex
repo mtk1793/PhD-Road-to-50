@@ -1,0 +1,15 @@
+\section*{Introduction}
+
+The rising penetration of variable renewable energy (VRE) — in particular solar photovoltaic (PV) and wind power — presents significant operational challenges for power systems. Accurate short-term forecasts of generation from distributed PV plants and multi-turbine wind farms are critical for unit commitment, reserve allocation, and real-time balancing. Forecasting quality improves when models exploit both local sensor measurements (solar irradiance, wind speed) and spatially-resolved meteorological fields (e.g., from reanalysis or NWP).
+
+This paper proposes a hybrid, physics-informed multi-modal foundation model for real-time solar-wind hybrid forecasting. The architecture combines a Vision Transformer (ViT) backbone to process gridded meteorological fields with lightweight scalar encoders for point measurements. Physics-informed loss terms (PINNs) are added to the standard data loss to enforce physical constraints such as non-negativity, bounded solar power consistent with clear-sky irradiance, and wind power curve behaviour. We also introduce attention-based fusion layers that permit cross-modal learning and enable interpretability via attention maps.
+
+Our contributions are:
+\begin{itemize}
+	\item A compact hybrid architecture (ViT + scalar encoder + fusion head) suitable for multi-site, multi-modal short-term forecasting.
+	\item A hybrid loss that blends data-driven MSE with physics constraints: solar irradiance upper bounds and wind turbine power-curve regularization.
+	\item Practical data handling patterns for aligning ERA5-like gridded fields with station-level CSV time series (NSRDB, PV-Live, Wind DB).
+	\item Interpretability tools: attention extraction and gradient saliency for diagnosing spatio-temporal model behavior.
+\end{itemize}
+
+We present a proof-of-concept on synthetic data (kept in the repository) and provide a reproducible codebase for ingestion of real datasets (ERA5/NSRDB/PV-Live/Wind DB). The LaTeX source and scripts for producing figures are included so that results can be reproduced and extended.

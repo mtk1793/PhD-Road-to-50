@@ -1,0 +1,94 @@
+
+# Two-Area Power System Simulation - Code Documentation
+
+## Main Classes and Functions
+
+### 1. TwoAreaPowerSystem Class
+- **Purpose**: Core power system model implementation
+- **Key Methods**:
+  - `system_dynamics()`: Implements differential equations
+  - `fuzzy_pid_controller()`: Combined fuzzy-PID control logic
+  - `wind_turbine_model()`: Wind power generation model
+  - `smes_model()`: Energy storage system model
+
+### 2. ArtificialBeeColony Class  
+- **Purpose**: ABC optimization algorithm implementation
+- **Key Methods**:
+  - `optimize()`: Main optimization loop
+  - `employed_bee_phase()`: Local search around current solutions
+  - `onlooker_bee_phase()`: Probabilistic selection and search
+  - `scout_bee_phase()`: Exploration of new solution areas
+
+### 3. SimulationEngine Class
+- **Purpose**: Simulation execution and performance evaluation
+- **Key Methods**:
+  - `simulate_system()`: Run system simulation with specified controller
+  - `calculate_performance_metrics()`: Compute ITAE, settling time, etc.
+  - `compare_controllers()`: Comparative analysis framework
+
+### 4. VisualizationEngine Class
+- **Purpose**: Results visualization and plotting
+- **Key Methods**:
+  - `plot_frequency_response()`: Frequency deviation plots
+  - `plot_tie_line_power()`: Tie-line power exchange plots
+  - `plot_performance_metrics_comparison()`: Controller comparison charts
+
+## Key Mathematical Implementation Details
+
+### Numerical Integration
+- Runge-Kutta 4th order method for accurate solution
+- Time step: 0.01 seconds
+- Simulation duration: 15-20 seconds per test case
+
+### Fuzzy Logic Implementation
+- Triangular membership functions
+- Mamdani inference system
+- Centroid defuzzification method
+- Rule base: 7×7 matrix (49 rules)
+
+### ABC Algorithm Implementation
+- Population-based metaheuristic
+- Three bee types: employed, onlooker, scout
+- Constraint handling through boundary enforcement
+- Fitness evaluation using ITAE objective function
+
+## Usage Instructions
+
+1. Import required libraries
+2. Initialize TwoAreaPowerSystem()
+3. Create SimulationEngine and VisualizationEngine instances
+4. Run optimization using ArtificialBeeColony
+5. Execute comparative simulations
+6. Generate visualizations and reports
+
+## Parameter Tuning Guidelines
+
+### PID Parameters
+- Kp: Proportional gain (affects response speed)
+- Ki: Integral gain (eliminates steady-state error)
+- Kd: Derivative gain (improves stability)
+
+### ABC Parameters
+- Population size: Balance between exploration and computation time
+- Maximum iterations: Depends on convergence requirements
+- Abandonment limit: Controls exploration vs exploitation
+
+### System Parameters
+- Inertia constants: Affect frequency response dynamics
+- Damping coefficients: Influence system stability
+- Time constants: Determine response characteristics
+
+## Validation and Testing
+
+The simulation has been validated through:
+1. Comparison with literature results
+2. Physical constraint verification
+3. Stability analysis under various conditions
+4. Performance metrics evaluation
+
+## Error Handling
+
+- Simulation failures are caught and logged
+- Parameter bounds are enforced
+- Numerical stability checks implemented
+- Graceful degradation for edge cases

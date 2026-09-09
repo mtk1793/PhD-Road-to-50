@@ -1,0 +1,28 @@
+\section*{Method}
+
+Our model comprises three components: (1) a spatial encoder for gridded meteorological fields, implemented as a Vision Transformer (ViT) with patch embeddings; (2) a scalar encoder (MLP) for station-level measurements; and (3) a fusion head that concatenates image and scalar features and predicts per-site solar and wind power.
+
+Let $X_t \in \mathbb{R}^{C\times H \times W}$ denote the gridded meteorological field at time $t$ (e.g., cloud fraction, GHI estimates), and $s_t \in \mathbb{R}^d$ the vector of scalar measurements (irradiance, wind speed). The ViT-based encoder produces a patch-averaged feature vector $f^{\text{img}}_t \in \mathbb{R}^m$, and the scalar MLP produces $f^{\text{scalar}}_t \in \mathbb{R}^n$. The fusion head outputs predictions $\hat{y}_t = [\hat{y}^{\text{solar}}_t, \hat{y}^{\text{wind}}_t]^\top \in \mathbb{R}^2$.
+
+Training minimizes a hybrid loss:
+$$
+\mathcal{L} = \mathcal{L}_{\text{data}} + \alpha_{s}\mathcal{L}_{\text{solar}} + \alpha_{w}\mathcal{L}_{\text{wind}} + \beta \mathcal{R},
+$$
+where $\mathcal{L}_{\text{data}}$ is the mean-squared error between predictions and observations,
+$$
+\mathcal{L}_{\text{data}} = \frac{1}{N}\sum_{t=1}^N \|\hat{y}_t - y_t\|_2^2.
+$$
+The solar physics loss enforces physical bounds based on measured or clear-sky irradiance $G_t$:
+$$
+\mathcal{L}_{\text{solar}} = \frac{1}{N}\sum_{t=1}^N \Big[\text{ReLU}(-\hat{y}^{\text{solar}}_t)^2 + \text{ReLU}(\hat{y}^{\text{solar}}_t - A\,G_{\text{cs}}\,\eta_{\max})^2 + \lambda_g(\hat{y}^{\text{solar}}_t - \eta\,G_t)^2\Big],
+$$
+where $A$ is an effective area, $\eta_{\max}$ a maximum efficiency, and $G_{\text{cs}}$ a physically-motivated clear-sky irradiance upper bound. The guidance term with $\eta$ encourages the model to align with measured irradiance.
+
+For wind, we regularize predictions toward a canonical power curve $P_{\text{curve}}(v)$ computed from turbine specs and measured wind speed $v_t$:
+$$
+\mathcal{L}_{\text{wind}} = \frac{1}{N}\sum_{t=1}^N \|\hat{y}^{\text{wind}}_t - P_{\text{curve}}(v_t)\|_2^2.
+$$
+
+The regularizer $\mathcal{R}$ includes standard weight decay and optional smoothness penalties on temporal outputs.
+
+We implemented the ViT encoder with small patch sizes (8x8) and a shallow transformer (4 layers) to keep the prototype lightweight. Attention weights are extracted during inference to produce spatial attention overlays and per-head maps for interpretability.

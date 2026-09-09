@@ -1,0 +1,5 @@
+Controllers,Frequency_Nadir_Hz,Settling_Time_s,ROCOF_Hz_per_s,IAE_Hz_s,ISE_Hz2_s,Control_Effort,User_Satisfaction_Percent
+Conventional AGC,-0.56,42.3,-0.32,7.85,2.12,0.0,100
+MPC,-0.31,28.2,-0.26,3.85,0.78,1.2,92
+Reinforcement Learning,-0.29,27.5,-0.25,3.62,0.71,1.1,94
+Adaptive Control,-0.33,29.8,-0.27,4.12,0.86,1.0,95

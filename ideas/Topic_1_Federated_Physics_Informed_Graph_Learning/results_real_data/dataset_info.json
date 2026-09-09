@@ -1,0 +1,11 @@
+{
+  "total_scenarios": 500,
+  "successful_scenarios": 489,
+  "success_rate": 97.8,
+  "num_buses": 118,
+  "num_generators": 54,
+  "load_factor_min": 0.6347507070676107,
+  "load_factor_max": 1.4557025162229213,
+  "load_factor_mean": 0.9168473728187562,
+  "data_source": "ERCOT Hourly Load Data"
+}

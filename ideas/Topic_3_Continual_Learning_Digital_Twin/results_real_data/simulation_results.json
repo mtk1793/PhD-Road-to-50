@@ -1,0 +1,151 @@
+{
+  "experiment": "Continual Learning Digital Twin with REAL ERCOT Data",
+  "timestamp": "2025-12-23T06:53:14.406853",
+  "data_source": "ERCOT Native Load 2023-2024",
+  "system": {
+    "test_system": "IEEE 118-bus",
+    "num_buses": 118,
+    "num_generators": 54,
+    "state_dim": 344
+  },
+  "ercot_data_stats": {
+    "baseline": {
+      "mean_load_mw": 43494.85519405701,
+      "min_load_mw": 33430.591975,
+      "max_load_mw": 65631.970941,
+      "std_load_mw": 5534.312552887424,
+      "samples_used": 2631,
+      "load_factor_range": [
+        0.7686102603594331,
+        1.4786927725830858
+      ]
+    },
+    "renewable_20": {
+      "mean_load_mw": 58809.28461441636,
+      "min_load_mw": 33298.069659,
+      "max_load_mw": 85464.116394,
+      "std_load_mw": 12741.446459024559,
+      "samples_used": 3509,
+      "load_factor_range": [
+        0.5727653380558689,
+        1.4341736684945907
+      ]
+    },
+    "renewable_40": {
+      "mean_load_mw": 47899.583165081785,
+      "min_load_mw": 34504.428645,
+      "max_load_mw": 78313.707866,
+      "std_load_mw": 8103.433284628706,
+      "samples_used": 3509,
+      "load_factor_range": [
+        0.7439580581982534,
+        1.6207045628863033
+      ]
+    },
+    "topology_change": {
+      "mean_load_mw": 50301.33228952123,
+      "min_load_mw": 35855.647755,
+      "max_load_mw": 81010.062765,
+      "std_load_mw": 9967.40329233218,
+      "samples_used": 3509,
+      "load_factor_range": [
+        0.7201824980199705,
+        1.574034429968646
+      ]
+    },
+    "load_shift": {
+      "mean_load_mw": 54869.33301822435,
+      "min_load_mw": 37979.573522,
+      "max_load_mw": 85198.85005,
+      "std_load_mw": 10762.930340851595,
+      "samples_used": 4386,
+      "load_factor_range": [
+        0.7014931966863118,
+        1.5476185514009375
+      ]
+    }
+  },
+  "tasks": [
+    "baseline",
+    "renewable_20",
+    "renewable_40",
+    "topology_change",
+    "load_shift"
+  ],
+  "training_losses": {
+    "static": {
+      "baseline": 7.957553386688232,
+      "renewable_20": 8.082552909851074,
+      "renewable_40": 16.906780242919922,
+      "topology_change": 6.680206298828125,
+      "load_shift": 15.04841423034668
+    },
+    "ewc": {
+      "baseline": 8.000616073608398,
+      "renewable_20": 9.029973983764648,
+      "renewable_40": 18.176240921020508,
+      "topology_change": 7.95847225189209,
+      "load_shift": 22.4609375
+    },
+    "pnn": {
+      "baseline": 0.0033578823786228895,
+      "renewable_20": 0.0007640667608939111,
+      "renewable_40": 0.002282150788232684,
+      "topology_change": 0.0009735267958603799,
+      "load_shift": 0.0012365150032564998
+    }
+  },
+  "forgetting_evaluation": {
+    "static": {
+      "baseline": 8.707658767700195,
+      "renewable_20": 30.532896041870117,
+      "renewable_40": 44.0498161315918,
+      "topology_change": 14.36750602722168
+    },
+    "ewc": {
+      "baseline": 10.086845397949219,
+      "renewable_20": 13.553420066833496,
+      "renewable_40": 24.772735595703125,
+      "topology_change": 7.950703144073486
+    },
+    "pnn": {
+      "baseline": 4.741184234619141,
+      "renewable_20": 13.224771499633789,
+      "renewable_40": 18.385112762451172,
+      "topology_change": 3.885967493057251
+    }
+  },
+  "forgetting_rates_percent": {
+    "static": 140.70260136394245,
+    "ewc": 28.090942251536507,
+    "pnn": 769100.9976792844
+  },
+  "reality_checks": [
+    {
+      "mse": 0.0007278564153239131,
+      "mae": 0.016650095582008362,
+      "max_error": 0.1443435549736023,
+      "within_tolerance": false,
+      "trigger_retrain": true,
+      "task": "baseline"
+    },
+    {
+      "mse": 0.0022825547493994236,
+      "mae": 0.04388045892119408,
+      "max_error": 0.1292344331741333,
+      "within_tolerance": false,
+      "trigger_retrain": true,
+      "task": "renewable_20"
+    },
+    {
+      "mse": 0.0008410911541432142,
+      "mae": 0.01955111138522625,
+      "max_error": 0.136826753616333,
+      "within_tolerance": false,
+      "trigger_retrain": true,
+      "task": "renewable_40"
+    }
+  ],
+  "pnn_columns": 5,
+  "pnn_total_params": 325432
+}

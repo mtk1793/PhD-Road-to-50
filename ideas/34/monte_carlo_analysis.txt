@@ -1,0 +1,27 @@
+
+MONTE CARLO SIMULATION ANALYSIS SUMMARY
+============================================================
+
+Load Uncertainty Modeling:
+• Distribution Type: Normal Distribution
+• Uncertainty Level: ±15.0%
+• Number of Scenarios: 50
+• Load Buses Analyzed: 46
+
+Base Case Statistics (Under Uncertainty):
+• Mean Losses: 224.00 MW
+• Standard Deviation: 11.96 MW
+• Min Voltage (Mean): 0.964 p.u.
+• Max Voltage (Mean): 1.040 p.u.
+• Convergence Rate: 100.0%
+
+Performance Under Uncertainty:
+• SSA: 13.21% loss reduction, 0 violations
+• MFO: 0.00% loss reduction, 0 violations  
+• Hybrid: 0.00% loss reduction, 0 violations
+
+Robustness Assessment:
+✓ All algorithms maintained system stability
+✓ No voltage violations under uncertainty
+✓ Consistent performance across scenarios
+✓ Robust convergence characteristics

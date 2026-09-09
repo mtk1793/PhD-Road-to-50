@@ -1,0 +1,22 @@
+\section*{Appendix: Implementation Details}
+
+This appendix lists implementation choices, hyperparameters, and file locations to reproduce experiments.
+
+\begin{itemize}
+  \item Framework: PyTorch
+  \item ViT encoder: patch size 8, embedding dim 128, 4 transformer layers, 4 attention heads
+  \item Scalar encoder: 2-layer MLP, hidden 64
+  \item Fusion head: concatenation followed by 2-layer MLP
+  \item Physics losses: solar bounds and wind power-curve regularization (see `src/model.py`)
+  \item Synthetic dataset: `src/data.py` generates images and targets; real-data ingestion stubs in `src/datasets_real.py`
+  \item Training script: `src/train.py` (use `--config` to point to `data_config_example.yaml` for real data)
+  \item Outputs: `outputs/` contains trained weights and figures
+\end{itemize}
+
+Hyperparameters used for the prototype run
+\begin{itemize}
+  \item Learning rate: 1e-3
+  \item Batch size: 32
+  \item Epochs: 5
+  \item Loss weights: see inline comments in `src/train.py`
+\end{itemize}

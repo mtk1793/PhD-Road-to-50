@@ -1,0 +1,329 @@
+{
+  "config": {
+    "random_seeds": [
+      42,
+      123,
+      456,
+      789,
+      1024
+    ],
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "test_ratio": 0.15,
+    "num_scenarios": 600,
+    "num_utilities": 5,
+    "num_rounds": 30,
+    "local_epochs": 5,
+    "learning_rate": 0.001,
+    "fedprox_mu": 0.01,
+    "hidden_dim": 64,
+    "physics_loss_weight": 0.1
+  },
+  "ercot_stats": {
+    "source": "ERCOT Native Load 2023-2024",
+    "load_column": "ERCOT",
+    "total_records": 17544,
+    "mean_load_mw": 51643.90393728254,
+    "std_load_mw": 11181.341734505226,
+    "min_load_mw": 33298.069659,
+    "max_load_mw": 85464.116394,
+    "p5_load_mw": 37946.20752335,
+    "p95_load_mw": 75208.7534015,
+    "load_factors_sampled": 600,
+    "load_factor_min": 0.6447628300803496,
+    "load_factor_max": 1.5,
+    "load_factor_mean": 0.9979588766443459
+  },
+  "seed_results": [
+    {
+      "seed": 42,
+      "scenario_info": {
+        "seed": 42,
+        "total_scenarios": 600,
+        "successful": 599,
+        "success_rate": 99.83333333333333,
+        "avg_power_balance_residual_mw": 76.42183518634455,
+        "voltage_violation_rate": 23.37511671995699,
+        "line_violation_rate": 0.0,
+        "avg_cost": 129803.7466605236
+      },
+      "centralized": {
+        "final_train_loss": 8224.952738104117,
+        "final_val_loss": 6078.3638134217,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.027586316002083885,
+          "rmse_v_ang_deg": 3.469257386923662,
+          "rmse_gen_p_mw": 107.2966666982308,
+          "rmse_gen_q_mvar": 25.825125049479745,
+          "overall_mse": 12191.548276194048
+        }
+      },
+      "local_only": {
+        "avg_val_loss": 160.0210922069764,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.04289244261484835,
+          "rmse_v_ang_deg": 2.0461365944637984,
+          "rmse_gen_p_mw": 11.459655463990043,
+          "rmse_gen_q_mvar": 7.193487968990654,
+          "overall_mse": 187.25848723820752
+        }
+      },
+      "fedavg": {
+        "final_global_loss": 86.45925033226442,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.010395973689848235,
+          "rmse_v_ang_deg": 1.9835683848618848,
+          "rmse_gen_p_mw": 10.260862957560935,
+          "rmse_gen_q_mvar": 6.9526535683197,
+          "overall_mse": 157.55935188860735
+        }
+      },
+      "fedprox": {
+        "final_global_loss": 76.28682348701392,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.010529124482094396,
+          "rmse_v_ang_deg": 1.787414174223767,
+          "rmse_gen_p_mw": 9.663549592210542,
+          "rmse_gen_q_mvar": 6.727303410472349,
+          "overall_mse": 141.83576219034381
+        }
+      }
+    },
+    {
+      "seed": 123,
+      "scenario_info": {
+        "seed": 123,
+        "total_scenarios": 600,
+        "successful": 600,
+        "success_rate": 100.0,
+        "avg_power_balance_residual_mw": 76.4385567091854,
+        "voltage_violation_rate": 23.415254237288135,
+        "line_violation_rate": 0.0,
+        "avg_cost": 129987.84266037821
+      },
+      "centralized": {
+        "final_train_loss": 6971.021948242187,
+        "final_val_loss": 5262.103442382812,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.011734983235739856,
+          "rmse_v_ang_deg": 2.798371079332074,
+          "rmse_gen_p_mw": 99.67976221247346,
+          "rmse_gen_q_mvar": 21.225708451563715,
+          "overall_mse": 10394.416712413511
+        }
+      },
+      "local_only": {
+        "avg_val_loss": 139.4884149509006,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.01711302305397013,
+          "rmse_v_ang_deg": 2.072682363625636,
+          "rmse_gen_p_mw": 15.612673462707734,
+          "rmse_gen_q_mvar": 9.309470076934995,
+          "overall_mse": 334.71811080252917
+        }
+      },
+      "fedavg": {
+        "final_global_loss": 73.95309272342259,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.010130254550591444,
+          "rmse_v_ang_deg": 1.6837297677409246,
+          "rmse_gen_p_mw": 9.465774035082584,
+          "rmse_gen_q_mvar": 7.0087544756770415,
+          "overall_mse": 141.55856593640075
+        }
+      },
+      "fedprox": {
+        "final_global_loss": 79.79297178056505,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.010007318786820716,
+          "rmse_v_ang_deg": 1.7446372141024467,
+          "rmse_gen_p_mw": 10.176370189989687,
+          "rmse_gen_q_mvar": 6.916120864083679,
+          "overall_mse": 154.43509720558473
+        }
+      }
+    },
+    {
+      "seed": 456,
+      "scenario_info": {
+        "seed": 456,
+        "total_scenarios": 600,
+        "successful": 600,
+        "success_rate": 100.0,
+        "avg_power_balance_residual_mw": 76.38417927786371,
+        "voltage_violation_rate": 23.409604519774007,
+        "line_violation_rate": 0.0,
+        "avg_cost": 129840.97434506316
+      },
+      "centralized": {
+        "final_train_loss": 6301.997660900298,
+        "final_val_loss": 4199.59755859375,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.05071155005735967,
+          "rmse_v_ang_deg": 2.8082678383039497,
+          "rmse_gen_p_mw": 91.12663491023036,
+          "rmse_gen_q_mvar": 21.498885057162564,
+          "overall_mse": 8774.154588676467
+        }
+      },
+      "local_only": {
+        "avg_val_loss": 153.33259487575955,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.02278416008651567,
+          "rmse_v_ang_deg": 2.463207228049547,
+          "rmse_gen_p_mw": 11.35257526376353,
+          "rmse_gen_q_mvar": 7.646255639856427,
+          "overall_mse": 193.41409939571818
+        }
+      },
+      "fedavg": {
+        "final_global_loss": 59.83726115756565,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.014492506989814647,
+          "rmse_v_ang_deg": 1.489562293858704,
+          "rmse_gen_p_mw": 8.22729870423714,
+          "rmse_gen_q_mvar": 6.135539019995735,
+          "overall_mse": 107.55228889467682
+        }
+      },
+      "fedprox": {
+        "final_global_loss": 70.3305662367079,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.010392699640118575,
+          "rmse_v_ang_deg": 1.8255899822397739,
+          "rmse_gen_p_mw": 8.611224760435087,
+          "rmse_gen_q_mvar": 6.757459518025677,
+          "overall_mse": 123.1493378039462
+        }
+      }
+    },
+    {
+      "seed": 789,
+      "scenario_info": {
+        "seed": 789,
+        "total_scenarios": 600,
+        "successful": 600,
+        "success_rate": 100.0,
+        "avg_power_balance_residual_mw": 76.5083404933985,
+        "voltage_violation_rate": 23.401129943502827,
+        "line_violation_rate": 0.0,
+        "avg_cost": 130206.69040239135
+      },
+      "centralized": {
+        "final_train_loss": 6543.533023507254,
+        "final_val_loss": 5296.673627387153,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.07934359095505732,
+          "rmse_v_ang_deg": 3.190583599164569,
+          "rmse_gen_p_mw": 100.28786525527359,
+          "rmse_gen_q_mvar": 25.746615928537977,
+          "overall_mse": 10730.73026834024
+        }
+      },
+      "local_only": {
+        "avg_val_loss": 136.72145957099067,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.012349179896176636,
+          "rmse_v_ang_deg": 1.9364637988563689,
+          "rmse_gen_p_mw": 11.36435602123501,
+          "rmse_gen_q_mvar": 8.13022387899963,
+          "overall_mse": 198.99917264656153
+        }
+      },
+      "fedavg": {
+        "final_global_loss": 58.83815763261583,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.010097126827179594,
+          "rmse_v_ang_deg": 1.5230235272306305,
+          "rmse_gen_p_mw": 9.549682340251257,
+          "rmse_gen_q_mvar": 5.691434356759258,
+          "overall_mse": 125.90856045347456
+        }
+      },
+      "fedprox": {
+        "final_global_loss": 64.81977032555474,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.010493513680125658,
+          "rmse_v_ang_deg": 1.877330497275898,
+          "rmse_gen_p_mw": 9.583701826076393,
+          "rmse_gen_q_mvar": 6.546638955904127,
+          "overall_mse": 138.23030221993298
+        }
+      }
+    },
+    {
+      "seed": 1024,
+      "scenario_info": {
+        "seed": 1024,
+        "total_scenarios": 600,
+        "successful": 600,
+        "success_rate": 100.0,
+        "avg_power_balance_residual_mw": 76.40246144547284,
+        "voltage_violation_rate": 23.358757062146893,
+        "line_violation_rate": 0.0,
+        "avg_cost": 129789.0003250431
+      },
+      "centralized": {
+        "final_train_loss": 6425.041731770833,
+        "final_val_loss": 5132.489816623264,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.022079213162829944,
+          "rmse_v_ang_deg": 2.9152932058415373,
+          "rmse_gen_p_mw": 100.12460192362515,
+          "rmse_gen_q_mvar": 19.989876376444816,
+          "overall_mse": 10433.030489877627
+        }
+      },
+      "local_only": {
+        "avg_val_loss": 184.28390174018014,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.02049464637661398,
+          "rmse_v_ang_deg": 2.298322845973009,
+          "rmse_gen_p_mw": 14.585361669056534,
+          "rmse_gen_q_mvar": 9.661684281425927,
+          "overall_mse": 311.36362610598803
+        }
+      },
+      "fedavg": {
+        "final_global_loss": 64.49603377448187,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.010242350833695886,
+          "rmse_v_ang_deg": 1.4567168144603375,
+          "rmse_gen_p_mw": 9.11717368537708,
+          "rmse_gen_q_mvar": 6.228547262262688,
+          "overall_mse": 124.0397857908544
+        }
+      },
+      "fedprox": {
+        "final_global_loss": 62.40978609720866,
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.010161279246181149,
+          "rmse_v_ang_deg": 1.726699312507065,
+          "rmse_gen_p_mw": 9.112754929487423,
+          "rmse_gen_q_mvar": 5.901971601727869,
+          "overall_mse": 120.85716495990782
+        }
+      }
+    }
+  ],
+  "aggregated": {
+    "centralized": {
+      "mse_mean": 10504.776067100378,
+      "mse_std": 1087.072500160755
+    },
+    "local_only": {
+      "mse_mean": 245.1506992378009,
+      "mse_std": 64.13208288989973
+    },
+    "fedavg": {
+      "mse_mean": 131.3237105928028,
+      "mse_std": 16.973632723778024,
+      "gap_vs_centralized": -98.74986663443411
+    },
+    "fedprox": {
+      "mse_mean": 135.7015328759431,
+      "mse_std": 12.432881694294835,
+      "gap_vs_centralized": -98.70819204513134
+    }
+  }
+}

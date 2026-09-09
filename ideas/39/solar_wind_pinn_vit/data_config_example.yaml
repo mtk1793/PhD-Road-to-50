@@ -1,0 +1,28 @@
+# Example data config for RealRenewablesDataset
+era5:
+  path: /path/to/era5_hourly.nc
+  variables:
+    ghi: ghi
+    cloud: tcc
+nsrdb:
+  path: /path/to/nsrdb_site1.csv
+  time_col: time
+  cols: [ghi]
+pv_live:
+  path: /path/to/pvlive_site1.csv
+  time_col: time
+  cols: [generation]
+wind_db:
+  path: /path/to/wind_site1.csv
+  time_col: time
+  cols: [power, wind_speed]
+
+sites:
+  - name: site1
+    lat: 45.3
+    lon: -63.2
+
+# Notes:
+# - ERA5 file must include time, latitude and longitude coordinates and the variables named above.
+# - CSVs are expected to have a time column and the named measurement columns.
+# - Times will be matched using nearest available timestamps; you may want to pre-process files to identical time indices.

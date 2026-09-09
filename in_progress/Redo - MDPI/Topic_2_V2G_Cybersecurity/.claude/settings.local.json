@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python generate_figures.py)",
+      "Bash(pdflatex -interaction=nonstopmode IEEE_V2G_Cybersecurity.tex)",
+      "Bash(bibtex IEEE_V2G_Cybersecurity)"
+    ]
+  }
+}

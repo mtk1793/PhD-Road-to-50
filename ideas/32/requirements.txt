@@ -1,0 +1,19 @@
+# Core dependencies for MADRL-GA Distribution Network Framework
+numpy>=1.20.0
+matplotlib>=3.5.0
+pandas>=1.3.0
+networkx>=2.6.0
+scipy>=1.7.0
+seaborn>=0.11.0
+
+# Optional dependencies for enhanced functionality
+# torch>=1.12.0  # For advanced neural networks
+# stable-baselines3>=1.6.0  # For additional RL algorithms
+# gym>=0.21.0  # For environment framework
+# tensorboard>=2.8.0  # For training monitoring
+# optuna>=3.0.0  # For hyperparameter optimization
+
+# Development dependencies
+# pytest>=6.0.0  # For testing
+# jupyter>=1.0.0  # For interactive development
+# notebook>=6.0.0  # For Jupyter notebooks

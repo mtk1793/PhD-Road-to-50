@@ -1,0 +1,31 @@
+{
+  "summary": {
+    "ablation": "full",
+    "n_seeds": 2,
+    "npv_mean": 198.021,
+    "npv_std": 4.6839,
+    "npv_ci95_low": 191.5295,
+    "npv_ci95_high": 204.5125,
+    "curtailment_mean": 2722.3505,
+    "curtailment_std": 31.7187
+  },
+  "calibration_params": {
+    "wind_cf_mean": 0.2036971054131054,
+    "wind_cf_std": 0.26225759171809837,
+    "weibull_k": 2.1252888888888886,
+    "weibull_c": 8.67864,
+    "solar_cf_mean": 0.00037325641025641026,
+    "solar_cf_std": 0.0005470667529751352,
+    "price_mean": 45.90084150943397,
+    "price_std": 19.556253260759874,
+    "price_dr_trigger": 85.0,
+    "bess_efficiency_mean": 0.919987712107851,
+    "bess_daily_cycles": 1.3,
+    "freq_dev_std_hz": 0.042010223029558445,
+    "bess_installed_cost_kwh": 279.71245
+  },
+  "run_config": {
+    "n_rounds": 5,
+    "n_seeds": 2
+  }
+}

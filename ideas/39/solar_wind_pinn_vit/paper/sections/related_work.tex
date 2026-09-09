@@ -1,0 +1,7 @@
+\section*{Related Work}
+
+Recent years have seen growing interest in combining physics and machine learning for environmental forecasting. Physics-Informed Neural Networks (PINNs) \cite{raissi2019physics} inject differential equation constraints into the loss to improve generalization and enforce consistency. For wind and solar forecasting, hybrid methods that blend physical models (e.g., clear-sky models, power curves) with data-driven components have shown promising results \cite{liu2020hybrid, li2021physics}.
+
+Vision-based models, particularly Vision Transformers (ViT) \cite{dosovitskiy2021image}, have been applied to gridded meteorological data for tasks such as precipitation nowcasting and cloud motion forecasting \cite{nowcasting_vit}. Multi-modal fusion transformers facilitate information flow between spatial fields and scalar sensors \cite{multimodal_transformers}.
+
+Interpretability in transformer models typically uses attention maps or gradient-based saliency. Recent work has emphasized careful interpretation of attention weights \cite{jain2019attention} and advocated for multiple complementary diagnostics (attention + gradients) for robust insights.

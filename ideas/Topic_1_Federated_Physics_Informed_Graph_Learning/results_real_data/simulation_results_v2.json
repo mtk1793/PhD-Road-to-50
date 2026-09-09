@@ -1,0 +1,274 @@
+{
+  "config": {
+    "random_seeds": [
+      42,
+      123,
+      456
+    ],
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "test_ratio": 0.15,
+    "num_scenarios": 400,
+    "num_utilities": 5,
+    "num_rounds": 20,
+    "local_epochs": 3,
+    "learning_rate": 0.001,
+    "fedprox_mu": 0.01,
+    "hidden_dim": 64,
+    "physics_loss_weight": 0.1
+  },
+  "ercot_stats": {
+    "source": "ERCOT Native Load 2023-2024",
+    "total_records": 17544,
+    "mean_load_mw": 51643.90393728254,
+    "std_load_mw": 11181.341734505226,
+    "min_load_mw": 33298.069659,
+    "max_load_mw": 85464.116394,
+    "load_factor_min": 0.6447628300803496,
+    "load_factor_max": 1.5,
+    "load_factor_mean": 0.9980082011815443
+  },
+  "data_pipeline": {
+    "step1": "Load REAL ERCOT hourly data (17,544 records)",
+    "step2": "Compute load scaling factors (normalize by mean)",
+    "step3": "Generate IEEE 118-bus OPF scenarios using PyPower",
+    "step4": "Labels are SYNTHETIC but based on REAL load patterns",
+    "step5": "Split 70/15/15 for train/val/test"
+  },
+  "seed_results": [
+    {
+      "seed": 42,
+      "scenario_info": {
+        "seed": 42,
+        "test_system": "IEEE 118-bus",
+        "total_scenarios": 400,
+        "successful": 400,
+        "success_rate": 100.0,
+        "total_system_load_mw": 4242.0,
+        "physics_metrics": {
+          "power_balance": {
+            "mean_mw": 76.32641295637741,
+            "max_mw": 99.0550927148106,
+            "p95_mw": 91.58787897973265,
+            "mean_pct_of_load": 1.8457145686729108,
+            "max_pct_of_load": 2.150158188981602
+          },
+          "voltage_violation_rate_pct": 23.309322033898308,
+          "line_violation_rate_pct": 0.0
+        },
+        "avg_cost": 129734.23144120951
+      },
+      "centralized": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.009565177864839885,
+          "rmse_v_ang_deg": 1.0343567136816756,
+          "rmse_gen_p_mw": 7.071084878894038,
+          "rmse_gen_q_mvar": 3.902222197559158,
+          "overall_mse": 66.29756474741329
+        }
+      },
+      "centralized_no_physics": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.011120497050083245,
+          "rmse_v_ang_deg": 1.2536803278582587,
+          "rmse_gen_p_mw": 7.0337937496281775,
+          "rmse_gen_q_mvar": 3.8925397381209175,
+          "overall_mse": 66.1979581550723
+        }
+      },
+      "local_only": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.17382639313661943,
+          "rmse_v_ang_deg": 3.0393987839318206,
+          "rmse_gen_p_mw": 12.882249155395844,
+          "rmse_gen_q_mvar": 6.69128144792833,
+          "overall_mse": 219.9937512998039
+        }
+      },
+      "fedavg": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.08167374803523796,
+          "rmse_v_ang_deg": 2.9257853578334934,
+          "rmse_gen_p_mw": 12.48796119008537,
+          "rmse_gen_q_mvar": 5.887147095741815,
+          "overall_mse": 199.17456617321068
+        }
+      },
+      "mlp_baseline": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.07899417938591675,
+          "rmse_v_ang_deg": 4.253300372807661,
+          "rmse_gen_p_mw": 23.435777362086878,
+          "rmse_gen_q_mvar": 10.758272620491425,
+          "overall_mse": 683.0728944838218
+        }
+      }
+    },
+    {
+      "seed": 123,
+      "scenario_info": {
+        "seed": 123,
+        "test_system": "IEEE 118-bus",
+        "total_scenarios": 400,
+        "successful": 400,
+        "success_rate": 100.0,
+        "total_system_load_mw": 4242.0,
+        "physics_metrics": {
+          "power_balance": {
+            "mean_mw": 76.32783767162019,
+            "max_mw": 99.99873480175484,
+            "p95_mw": 91.700322484329,
+            "mean_pct_of_load": 1.8435943327947053,
+            "max_pct_of_load": 2.1724920178977736
+          },
+          "voltage_violation_rate_pct": 23.319915254237284,
+          "line_violation_rate_pct": 0.0
+        },
+        "avg_cost": 129984.55289351576
+      },
+      "centralized": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.012562338714489158,
+          "rmse_v_ang_deg": 1.0097323633783972,
+          "rmse_gen_p_mw": 6.935975215297337,
+          "rmse_gen_q_mvar": 4.60328342221307,
+          "overall_mse": 70.31768771044833
+        }
+      },
+      "centralized_no_physics": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.011298910824011557,
+          "rmse_v_ang_deg": 1.0369594012873389,
+          "rmse_gen_p_mw": 6.519175551946891,
+          "rmse_gen_q_mvar": 4.507446770070817,
+          "overall_mse": 63.89213872742789
+        }
+      },
+      "local_only": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.21090827073920765,
+          "rmse_v_ang_deg": 4.447502490016577,
+          "rmse_gen_p_mw": 24.031996637653325,
+          "rmse_gen_q_mvar": 9.033175653190156,
+          "overall_mse": 678.9598854709379
+        }
+      },
+      "fedavg": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.10845462866613051,
+          "rmse_v_ang_deg": 3.129332671970904,
+          "rmse_gen_p_mw": 16.642981640207942,
+          "rmse_gen_q_mvar": 6.841105745848929,
+          "overall_mse": 333.59405108052954
+        }
+      },
+      "mlp_baseline": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.1622981227356446,
+          "rmse_v_ang_deg": 4.665183900657288,
+          "rmse_gen_p_mw": 25.279517224326938,
+          "rmse_gen_q_mvar": 11.052332971938762,
+          "overall_mse": 782.9983367252424
+        }
+      }
+    },
+    {
+      "seed": 456,
+      "scenario_info": {
+        "seed": 456,
+        "test_system": "IEEE 118-bus",
+        "total_scenarios": 400,
+        "successful": 400,
+        "success_rate": 100.0,
+        "total_system_load_mw": 4242.0,
+        "physics_metrics": {
+          "power_balance": {
+            "mean_mw": 76.37279016854451,
+            "max_mw": 100.87046500707311,
+            "p95_mw": 91.36621751007057,
+            "mean_pct_of_load": 1.8449776481567397,
+            "max_pct_of_load": 2.1548552085993196
+          },
+          "voltage_violation_rate_pct": 23.2478813559322,
+          "line_violation_rate_pct": 0.0
+        },
+        "avg_cost": 129903.74225156526
+      },
+      "centralized": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.018955372160919373,
+          "rmse_v_ang_deg": 1.069633326818558,
+          "rmse_gen_p_mw": 6.417710261756525,
+          "rmse_gen_q_mvar": 3.464350081426167,
+          "overall_mse": 54.333201250507194
+        }
+      },
+      "centralized_no_physics": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.027419392965389748,
+          "rmse_v_ang_deg": 0.824972006006682,
+          "rmse_gen_p_mw": 5.949743058312277,
+          "rmse_gen_q_mvar": 3.57823856812937,
+          "overall_mse": 48.88456434418893
+        }
+      },
+      "local_only": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.13513085941293312,
+          "rmse_v_ang_deg": 3.123554708322708,
+          "rmse_gen_p_mw": 13.884158713014077,
+          "rmse_gen_q_mvar": 5.795076033799875,
+          "overall_mse": 236.12762377073702
+        }
+      },
+      "fedavg": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.10860440906221207,
+          "rmse_v_ang_deg": 2.2966910326902386,
+          "rmse_gen_p_mw": 8.83519893155463,
+          "rmse_gen_q_mvar": 4.322037950654935,
+          "overall_mse": 102.0273368243531
+        }
+      },
+      "mlp_baseline": {
+        "test_metrics": {
+          "rmse_v_mag_pu": 0.23180782938972488,
+          "rmse_v_ang_deg": 3.5125263556938164,
+          "rmse_gen_p_mw": 19.210380098456923,
+          "rmse_gen_q_mvar": 9.026600904908758,
+          "overall_mse": 462.9098036928996
+        }
+      }
+    }
+  ],
+  "privacy_test": {
+    "final_reconstruction_mse_p": NaN,
+    "final_reconstruction_mse_q": NaN,
+    "normalized_error": NaN,
+    "privacy_preserved": false,
+    "interpretation": "PARTIAL LEAKAGE"
+  },
+  "ablation": null,
+  "aggregated": {
+    "centralized": {
+      "mse_mean": 63.64948456945627,
+      "mse_std": 6.788971366300739
+    },
+    "centralized_no_physics": {
+      "mse_mean": 59.65822040889637,
+      "mse_std": 7.6760645107017
+    },
+    "local_only": {
+      "mse_mean": 378.3604201804929,
+      "mse_std": 212.65794813879424
+    },
+    "fedavg": {
+      "mse_mean": 211.59865135936445,
+      "mse_std": 94.94403336487245
+    },
+    "mlp_baseline": {
+      "mse_mean": 642.9936783006546,
+      "mse_std": 133.71343717590514
+    }
+  }
+}

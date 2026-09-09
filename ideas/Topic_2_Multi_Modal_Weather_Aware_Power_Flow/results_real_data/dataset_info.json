@@ -1,0 +1,22 @@
+{
+  "total_weather_records": 17544,
+  "num_scenarios": 500,
+  "location": {
+    "latitude": 30.2672,
+    "longitude": -97.7431,
+    "region": "Central Texas (ERCOT)"
+  },
+  "parameters": [
+    "ALLSKY_SFC_SW_DWN",
+    "WS10M",
+    "WS50M",
+    "T2M",
+    "RH2M",
+    "PRECTOTCORR",
+    "CLOUD_AMT"
+  ],
+  "date_range": {
+    "start": "2023-01-01 00:00:00",
+    "end": "2024-12-31 23:00:00"
+  }
+}

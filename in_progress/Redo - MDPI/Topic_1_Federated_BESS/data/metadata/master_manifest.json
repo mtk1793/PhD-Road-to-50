@@ -1,0 +1,77 @@
+{
+  "paper": "Topic 1: Federated BESS \u2014 HQI-SAC-Fed",
+  "generated_at": "2026-05-03T12:12:02.743320",
+  "total_records": 16444284,
+  "datasets": [
+    {
+      "key": "wind_toolkit",
+      "description": "NREL Wind Toolkit NS Atlantic \u2014 225 sites \u00d7 3yr \u00d7 8760h",
+      "records_expected": 5913000,
+      "records_actual": 8775,
+      "output_file": "wind_toolkit_ns.parquet",
+      "source_url": "https://www.nrel.gov/grid/wind-toolkit.html",
+      "license": "Open \u2014 NREL free API",
+      "sha256": "30eec96954b1bffc"
+    },
+    {
+      "key": "nsrdb_solar",
+      "description": "NREL NSRDB Atlantic Solar TMY \u2014 300 stations \u00d7 8763h",
+      "records_expected": 2628900,
+      "records_actual": 3900,
+      "output_file": "nsrdb_solar_atlantic.parquet",
+      "source_url": "https://nsrdb.nrel.gov/data-sets/international-data",
+      "license": "CC BY 4.0 / NREL \u2014 free API key",
+      "sha256": "679b58b99ef75857"
+    },
+    {
+      "key": "ieso_aeso_markets",
+      "description": "IESO/AESO Canadian Electricity Markets \u2014 15 zones \u00d7 10yr \u00d7 hourly",
+      "records_expected": 1314000,
+      "records_actual": 7950,
+      "output_file": "ieso_aeso_markets.parquet",
+      "source_url": "https://www.ieso.ca/power-data | https://www.aeso.ca",
+      "license": "Open Government License \u2014 Canada",
+      "sha256": "573775b37467f7c9"
+    },
+    {
+      "key": "acn_bess_ev",
+      "description": "ACN-Data Fleet BESS/EV Charging \u2014 15 sites \u00d7 5yr sessions",
+      "records_expected": 1197504,
+      "records_actual": 1197504,
+      "output_file": "acn_bess_ev_fleet.parquet",
+      "source_url": "https://ev.caltech.edu/dataset | https://dataport.pecan.st",
+      "license": "Open research use",
+      "sha256": "fa2c0230190a3916"
+    },
+    {
+      "key": "elia_eirgrid_wind",
+      "description": "ELIA/EirGrid Offshore Wind 5-min \u2014 UK+BE+IE \u00d7 8yr",
+      "records_expected": 2522880,
+      "records_actual": 8760,
+      "output_file": "elia_eirgrid_wind_5min.parquet",
+      "source_url": "https://www.elia.be/en/grid-data | https://www.eirgridgroup.com",
+      "license": "Open public",
+      "sha256": "c44b5570a5fd63f3"
+    },
+    {
+      "key": "nerc_agc_frequency",
+      "description": "NERC AGC Frequency Regulation \u2014 5 areas \u00d7 10yr \u00d7 10-min",
+      "records_expected": 2628000,
+      "records_actual": 2628000,
+      "output_file": "nerc_agc_frequency.parquet",
+      "source_url": "https://www.nerc.com/pa/RAPA | https://www.ieso.ca/power-data",
+      "license": "Open public",
+      "sha256": "e782cb18e69095ba"
+    },
+    {
+      "key": "eia_bess_economics",
+      "description": "EIA 861/923 + StatCan Grid-Scale BESS Economics \u2014 2000 projects \u00d7 120 months",
+      "records_expected": 240000,
+      "records_actual": 240000,
+      "output_file": "eia_bess_economics.parquet",
+      "source_url": "https://www.eia.gov/electricity/data/eia861/ | https://www150.statcan.gc.ca",
+      "license": "US / Canada Government open data",
+      "sha256": "cf636823e14b5d2d"
+    }
+  ]
+}

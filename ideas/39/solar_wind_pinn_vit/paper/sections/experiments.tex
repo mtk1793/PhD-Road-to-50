@@ -1,0 +1,22 @@
+\section*{Experiments}
+
+We run a set of controlled experiments to validate the hybrid modeling approach.
+
+Training protocol (prototype):
+\begin{itemize}
+	\item Optimizer: Adam, learning rate $1\times 10^{-3}$.
+	\item Batch size: 32.
+	\item Epochs: 5 for the synthetic prototype; scale up for real datasets.
+	\item Loss weights: initial $\alpha_s=0.1$, $\alpha_w=0.1$ and ramped via curriculum in larger runs.
+\end{itemize}
+
+Baselines:
+\begin{itemize}
+	\item Persistence (previous timestep prediction).
+	\item MLP using only scalar features.
+	\item ViT backbone without physics losses.
+\end{itemize}
+
+Evaluation metrics: RMSE, MAE, MAPE, and physical violation counts (predictions below zero or above upper physical bounds).
+
+We also perform ablation studies: removing solar or wind physics loss, removing image inputs, and varying $\alpha_s,\alpha_w$.

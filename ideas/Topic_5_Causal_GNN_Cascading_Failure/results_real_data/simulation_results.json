@@ -1,0 +1,66 @@
+{
+  "experiment": "Causal GNN for Cascading Failure Prevention",
+  "timestamp": "2025-12-23T18:36:09.498993",
+  "system": {
+    "test_system": "IEEE 30-bus",
+    "num_buses": 118,
+    "num_lines": 186
+  },
+  "cascading_failure_simulation": {
+    "n1_scenarios": 500,
+    "n2_scenarios": 200,
+    "total_scenarios": 700,
+    "avg_cascade_length": 1.7842857142857143,
+    "max_cascade_length": 10
+  },
+  "causal_discovery": {
+    "num_causal_edges": 0,
+    "top_critical_components": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "sample_edges": []
+  },
+  "causal_gnn": {
+    "final_train_loss": 0.3607184886932373,
+    "baseline_std_loss": 0.2371455729007721,
+    "baseline_lstm_loss": 0.06552980095148087,
+    "epochs": 100,
+    "node_features": 5,
+    "hidden_dim": 64
+  },
+  "do_calculus_interventions": {
+    "num_recommendations": 10,
+    "sample_recommendations": [
+      {
+        "scenario_id": 0,
+        "initial_failure": 0,
+        "recommendations": []
+      },
+      {
+        "scenario_id": 1,
+        "initial_failure": 1,
+        "recommendations": []
+      },
+      {
+        "scenario_id": 2,
+        "initial_failure": 2,
+        "recommendations": []
+      }
+    ]
+  },
+  "pypower_validation": {
+    "total_validated": 0,
+    "successful": 0,
+    "success_rate": 0.0,
+    "validation_details": []
+  },
+  "counterfactual_analysis": {
+    "num_counterfactuals": 0,
+    "avg_severity_reduction": 0.0,
+    "counterfactuals": []
+  }
+}

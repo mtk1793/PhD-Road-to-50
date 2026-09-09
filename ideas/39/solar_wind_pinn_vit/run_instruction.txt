@@ -1,0 +1,17 @@
+1) Create a Python virtual environment (Windows PowerShell):
+
+python -m venv .venv; .\.venv\Scripts\Activate.ps1; pip install -r requirements.txt
+
+2) Run the training prototype:
+
+python src\train.py
+
+Outputs are written to `outputs/` (model weights and `pred_vs_gt.png`).
+
+3) Test real-data loader (after placing files and installing extra deps):
+
+```powershell
+python src\real_data_test.py
+```
+
+If `real_data_test.py` prints an error, it likely means the expected files are not found at the paths in `data_config_example.yaml`.

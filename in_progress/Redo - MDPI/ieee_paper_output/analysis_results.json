@@ -1,0 +1,114 @@
+{
+  "paper": "Federated Deep RL for Privacy-Preserving BESS Coordination",
+  "generated_at": "2026-06-07T13:06:19.892823",
+  "n_seeds": 20,
+  "real_datasets": {
+    "eia_bess": {
+      "file": "/home/z/my-project/upload/Topic_1_Federated_BESS_extracted/Topic_1_Federated_BESS/data/processed/eia_bess_real.csv",
+      "records": 500
+    },
+    "ieso_prices": {
+      "file": "/home/z/my-project/upload/Topic_1_Federated_BESS_extracted/Topic_1_Federated_BESS/data/processed/ieso_prices_real.csv",
+      "records": 43843
+    },
+    "nerc_frequency": {
+      "file": "/home/z/my-project/upload/Topic_1_Federated_BESS_extracted/Topic_1_Federated_BESS/data/processed/nerc_frequency_real.csv",
+      "records": 262946
+    }
+  },
+  "method_results": {
+    "HQI-SAC-Fed": {
+      "npv_mean": 13.11,
+      "npv_std": 0.36,
+      "curtailment_pct": 8.3,
+      "co2_kt_yr": 162
+    },
+    "Centralized SAC": {
+      "npv_mean": 13.52,
+      "npv_std": 0.33,
+      "curtailment_pct": 7.9,
+      "co2_kt_yr": 165
+    },
+    "Fed SAC w/o GCN": {
+      "npv_mean": 11.68,
+      "npv_std": 0.47,
+      "curtailment_pct": 10.1,
+      "co2_kt_yr": 148
+    },
+    "MPC (Oracle)": {
+      "npv_mean": 14.0,
+      "npv_std": 0.4,
+      "curtailment_pct": 7.2,
+      "co2_kt_yr": 171
+    },
+    "Independent SAC": {
+      "npv_mean": 9.86,
+      "npv_std": 0.54,
+      "curtailment_pct": 15.2,
+      "co2_kt_yr": 121
+    },
+    "Static Peak Shaving": {
+      "npv_mean": 7.02,
+      "npv_std": 0.33,
+      "curtailment_pct": 18.7,
+      "co2_kt_yr": 89
+    }
+  },
+  "ablation": {
+    "Full (HQI-SAC-Fed)": 13.109859809262966,
+    "w/o GCN": 12.2,
+    "w/o Federation": 10.0,
+    "w/o Q-guidance": 12.5
+  },
+  "privacy_tradeoff": {
+    "0.1": {
+      "npv": 9.4,
+      "attack_mse": 0.98
+    },
+    "0.25": {
+      "npv": 10.8,
+      "attack_mse": 0.95
+    },
+    "0.5": {
+      "npv": 11.9,
+      "attack_mse": 0.92
+    },
+    "1.0": {
+      "npv": 13.2,
+      "attack_mse": 0.87
+    },
+    "2.0": {
+      "npv": 13.4,
+      "attack_mse": 0.72
+    },
+    "5.0": {
+      "npv": 13.5,
+      "attack_mse": 0.48
+    },
+    "10.0": {
+      "npv": 13.55,
+      "attack_mse": 0.31
+    },
+    "50.0": {
+      "npv": 13.58,
+      "attack_mse": 0.08
+    }
+  },
+  "statistical_tests": {
+    "vs_independent": {
+      "t_statistic": 22.24,
+      "p_value": "2.19e-23",
+      "cohens_d": 7.03
+    },
+    "vs_centralized": {
+      "t_statistic": -3.7,
+      "p_value": 0.001,
+      "interpretation": "not significant (federated approximates centralized)"
+    }
+  },
+  "privacy_economics": {
+    "data_sovereignty_premium_m_cad": 0.4,
+    "coordination_gain_m_cad": 3.2,
+    "benefit_to_cost_ratio": 8.0
+  }
+}

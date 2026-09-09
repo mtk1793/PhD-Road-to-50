@@ -1,0 +1,91 @@
+# Nova Scotia 2030 Grid Configuration for Federated BESS Simulation
+# Based on NSPI Integrated Resource Plan 2023
+
+grid_configuration:
+  year: 2030
+  base_system: "IEEE_118_bus_scaled"
+  
+offshore_wind:
+  total_capacity_mw: 2100
+  sites:
+    - name: "Guysborough"
+      capacity_mw: 700
+      bus: 47
+      capacity_factor: 0.48
+    - name: "Halifax"
+      capacity_mw: 700
+      bus: 89
+      capacity_factor: 0.48
+    - name: "Cape Breton"
+      capacity_mw: 700
+      bus: 112
+      capacity_factor: 0.48
+
+solar_pv:
+  total_capacity_mw: 580
+  distribution: "distributed_across_buses"
+  capacity_factor: 0.18
+
+battery_storage:
+  balanced_scenario:
+    total_capacity_mwh: 320
+    locations:
+      - site: "Guysborough"
+        bus: 47
+        capacity_mwh: 200
+        power_rating_mw: 100
+        efficiency: 0.92
+      - site: "Halifax"
+        bus: 89
+        capacity_mwh: 120
+        power_rating_mw: 60
+        efficiency: 0.92
+      - site: "Cape Breton"
+        bus: 112
+        capacity_mwh: 200
+        power_rating_mw: 100
+        efficiency: 0.92
+
+load:
+  peak_demand_mw: 1700
+  annual_growth_rate: 0.015
+  profile_source: "NSPI_IRP_2023"
+
+interconnections:
+  - name: "NB_Interconnection"
+    capacity_mw: 200
+  - name: "Maine_Interconnection"
+    capacity_mw: 100
+
+market:
+  electricity_price:
+    source: "Ontario_IESO_proxy"
+    mean_$/mwh: 42
+    std_$/mwh: 18
+  
+  carbon_tax_$/tonne: 75
+
+data_sources:
+  wind:
+    source: "NREL_WIND_Toolkit"
+    location: "NS_coastal_45.38N_61.50W"
+    resolution: "5min"
+    years: [2020, 2021, 2022]
+  
+  solar:
+    source: "NREL_NSRDB"
+    location: "Halifax_Sydney"
+    resolution: "hourly"
+    years: [2020, 2021, 2022]
+  
+  load:
+    source: "NSPI_historical_scaled"
+    resolution: "15min"
+
+federated_learning:
+  num_agents: 3
+  federation_rounds: 100
+  local_episodes_per_round: 50
+  privacy_epsilon: 1.0
+  privacy_delta: 1e-5
+  gradient_clip_norm: 1.0

@@ -1,0 +1,26 @@
+
+# Generated Files Summary
+
+## Data Files
+1. comprehensive_results_summary.csv - Complete performance metrics comparison
+2. system_parameters.csv - Power system configuration parameters
+3. optimized_controller_parameters.csv - ABC-optimized PID gains
+4. abc_optimization_convergence.csv - Optimization convergence history
+
+## Visualization Files
+1. fuzzy_membership_functions.png - Input/output membership function plots
+2. abc_convergence.png - ABC algorithm convergence curve
+3. frequency_response_*.png - Frequency deviation plots for each test case
+4. tie_line_power_*.png - Tie-line power exchange plots
+5. performance_metrics_comparison.png - Controller performance comparison
+6. system_states_ABC-Fuzzy-PID_*.png - Detailed system state evolution
+
+## Documentation Files
+1. technical_report.txt - Comprehensive technical analysis
+2. code_documentation.txt - Implementation details and usage guide
+3. file_summary.txt - This file listing all outputs
+
+## Usage Notes
+- All plots are saved in high resolution (300 DPI) PNG format
+- CSV files can be opened in Excel or imported into other analysis tools
+- Text files contain detailed technical information and implementation guides

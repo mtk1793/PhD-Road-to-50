@@ -1,0 +1,40 @@
+{
+  "experiment": "Federated Learning for Multi-Utility OPF",
+  "timestamp": "2025-12-14 20:10:47",
+  "dataset": {
+    "num_samples": 320,
+    "num_buses": 118,
+    "num_generators": 54
+  },
+  "partitioning": {
+    "num_utilities": 5,
+    "partition_sizes": {
+      "Utility_1": 23,
+      "Utility_2": 23,
+      "Utility_3": 23,
+      "Utility_4": 23,
+      "Utility_5": 26
+    }
+  },
+  "centralized": {
+    "num_epochs": 20,
+    "final_loss": 2962.8999074935914,
+    "initial_loss": 4262.590515518188
+  },
+  "federated": {
+    "num_rounds": 10,
+    "final_loss": 3715.0373081207276,
+    "initial_loss": 4393.6889181137085,
+    "utility_final_losses": {
+      "Utility_1": 6542.600980758667,
+      "Utility_2": 3407.529890060425,
+      "Utility_3": 2012.2057447433472,
+      "Utility_4": 1171.004298210144,
+      "Utility_5": 995.1127600669861
+    }
+  },
+  "comparison": {
+    "loss_difference": 752.1374006271362,
+    "relative_difference_pct": 25.385177498736113
+  }
+}

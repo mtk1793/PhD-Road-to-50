@@ -1,0 +1,203 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                 REAL-WORLD POWER SYSTEM DATA SOURCES GUIDE                   ║
+║                      Complete List of Free Public Data                       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+1. NOAA - HISTORICAL WEATHER DATA
+   ─────────────────────────────────
+   Website: https://www.ncei.noaa.gov/products/weather-and-climate-databases
+   Data Type: Wind speed, temperature, precipitation (1900-present)
+   Coverage: USA and global
+   Resolution: Daily and hourly
+   How to Download:
+     a) Go to: https://www.ncei.noaa.gov/cdo-web/
+     b) Create free account
+     c) Select location and date range
+     d) Download CSV
+   Records Available: 100+ years historical
+   Perfect for: Wind resource analysis, seasonal patterns
+
+2. NREL - SOLAR AND WIND RESOURCES
+   ────────────────────────────────
+   Website: https://nsrdb.nrel.gov/
+   Data Type: Solar irradiance, wind speed, temperature
+   Coverage: Global (30-year typical meteorological year)
+   Resolution: 30-minute to hourly
+   How to Download:
+     a) Register: https://developer.nrel.gov/signup/
+     b) Get free API key
+     c) Use NSRDB Data Viewer: https://nsrdb.nrel.gov/
+     d) Select location, year, download CSV
+   Records Available: 30 years typical year
+   Perfect for: Solar/wind feasibility studies
+
+3. EIA - US ELECTRICITY DEMAND AND GENERATION
+   ──────────────────────────────────────────
+   Website: https://www.eia.gov/opendata/
+   Data Type: Hourly demand, generation by fuel, wholesale prices
+   Coverage: All US regions and states
+   Resolution: Hourly to monthly
+   How to Download:
+     a) Register: https://www.eia.gov/opendata/register/
+     b) Get free API key
+     c) Browse datasets at: https://www.eia.gov/opendata/qb.php
+     d) Export to CSV
+   Records Available: 2015-present
+   Perfect for: Load forecasting, grid stability analysis
+
+4. ISO-RTO OPERATORS - REAL-TIME GRID DATA
+   ───────────────────────────────────────
+   
+   a) NYISO (New York):
+      - Website: https://www.nyiso.com/energy-market-data
+      - Data: Hourly demand, frequency, voltage (2010-present)
+      - Download: Manual CSV from portal
+   
+   b) PJM (Pennsylvania/New Jersey):
+      - Website: https://www.pjm.com/markets-and-operations/ops-analysis
+      - Data: Real-time and day-ahead market data
+      - Download: Public FTP server
+   
+   c) CAISO (California):
+      - Website: https://www.caiso.com/supply-demand
+      - Data: Demand, renewables, prices (hourly)
+      - Download: Market results portal
+   
+   d) ERCOT (Texas):
+      - Website: https://www.ercot.com/gridmktinfo
+      - Data: Demand, generation, wind (15-min resolution)
+      - Download: Public data portal
+   
+   e) MISO (Midwest):
+      - Website: https://www.misoenergy.org/markets-and-operations/
+      - Data: Real-time operations data
+      - Download: Historical data archive
+
+5. OPENEI - OPEN ENERGY INFORMATION PORTAL
+   ──────────────────────────────────────
+   Website: https://data.openei.org/
+   Featured Datasets:
+   
+   • ComEd Hourly Data (2010-2018)
+     - 70,000+ records
+     - Demand and pricing
+     - Download: https://data.openei.org/datasets/dataset/comeds-hourly-demand-and-pricing-data
+   
+   • FERC 714 Demand Data (2006-2023)
+     - 150,000+ records
+     - All US regions
+     - Download: https://data.openei.org/datasets/dataset/ferc-714-hourly-demand-data
+   
+   • Illinois Wind Data
+     - 50,000+ records
+     - Wind speed and power
+     - Download: https://data.openei.org/datasets/dataset/wind-data-and-analysis-illinois
+
+6. KAGGLE DATASETS - FREE POWER SYSTEM DATA
+   ────────────────────────────────────────
+   Website: https://www.kaggle.com/datasets?search=power
+   
+   Recommended Datasets:
+   
+   • Energy Consumption, Generation, Prices (Spain)
+     - 34,000 hourly records (2015-2018)
+     - Load, generation, prices, weather
+     - Download: https://www.kaggle.com/datasets/nicholasjhana/energy-consumption-generation-prices-and-weather
+   
+   • Hourly Energy Demand Generation (Spain)
+     - 175,000 hourly records (4 years)
+     - Comprehensive grid data
+     - Download: https://www.kaggle.com/datasets/robikscube/hourly-energy-demand-generation-prices-weather
+   
+   • Wind Power Forecasting
+     - 85,000 records (3 years)
+     - Wind power and meteorological data
+     - Download: https://www.kaggle.com/datasets/theforcecoder/wind-power-forecasting
+   
+   • Solar Power Generation
+     - 44,000 records (2 years)
+     - Solar irradiance and power output
+     - Download: https://www.kaggle.com/datasets/dronio/solar-power-generation-data
+
+7. GRIDLAB-D - OPEN-SOURCE DISTRIBUTION SIMULATOR
+   ──────────────────────────────────────────────
+   Website: https://sourceforge.net/projects/gridlab-d/
+   Data: Real feeder models and load profiles
+   Download: Free open-source distribution system data
+
+8. UCTE - UNION FOR THE COORDINATION OF TRANSMISSION OF ELECTRICITY
+   ──────────────────────────────────────────────────────────────
+   Website: https://www.entsoe.eu/ (European equivalent)
+   Data: European grid data, load, generation (hourly)
+   Coverage: 50+ countries
+   Access: Transparency platform: https://transparency.entsoe.eu/
+
+9. GLOBAL ENERGY MONITOR - FOSSIL AND RENEWABLE ENERGY DATA
+   ─────────────────────────────────────────────────────────
+   Website: https://globalenergymonitor.org/
+   Data: Power plants, capacity, generation worldwide
+   Format: GIS and database files
+
+10. ZENODO - OPEN SCIENCE RESEARCH DATA
+    ────────────────────────────────────
+    Website: https://zenodo.org/
+    Search: "power system" or "electricity demand"
+    Many published research datasets available
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                        RECOMMENDED WORKFLOW                                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+For Your FACTS Device Research:
+
+Step 1: GET LOAD DATA
+   → Use: EIA (US) or FERC 714 (entire US, 2006-2023)
+   → Records: 150,000+ hourly data
+   → Columns: DateTime, Region, Demand_MW
+
+Step 2: GET RENEWABLE DATA
+   → Use: NREL NSRDB (solar/wind irradiance)
+   → Records: 30 years typical meteorological year
+   → Columns: DateTime, Solar_Irradiance_Wm2, WindSpeed_ms
+
+Step 3: GET GRID FREQUENCY/VOLTAGE
+   → Use: ISO-RTO operators (NYISO, PJM, CAISO, ERCOT)
+   → Records: 15-min to hourly resolution
+   → Columns: DateTime, Frequency_Hz, Voltage_pu
+
+Step 4: COMBINE INTO SINGLE DATASET
+   → Merge by timestamp
+   → Harmonize resolution (convert to hourly if needed)
+   → Fill gaps with interpolation
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    DATA PROCESSING ONCE DOWNLOADED                          ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+After downloading real data:
+
+1. Load CSV files
+2. Parse timestamps
+3. Resample to consistent resolution (1-hour)
+4. Handle missing values (interpolation)
+5. Remove outliers (statistical methods)
+6. Normalize to system capacity (divide by capacity in MW)
+7. Export to single CSV with columns:
+   Date, Wind_Speed_ms, Wind_Power_MW, Solar_Irradiance_Wm2, Solar_Power_MW,
+   Load_Demand_MW, Frequency_Hz, Voltage_pu, Harmonics_THD_%, Power_Factor
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         ESTIMATED DATA SIZES                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Dataset Duration          Records    File Size    Use Case
+─────────────────────────────────────────────────────────────────────────────
+1 year (hourly)          8,760      1-3 MB       Quick testing
+2 years (hourly)         17,520     2-6 MB       Trend analysis
+3 years (hourly)         26,280     3-9 MB       AI training ⭐
+5 years (hourly)         43,800     5-15 MB      Long-term validation
+10 years (hourly)        87,600     10-30 MB     Rare event capture
+
+All datasets easily fit on disk and RAM!
+

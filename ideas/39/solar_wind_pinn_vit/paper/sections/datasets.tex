@@ -1,0 +1,16 @@
+\section*{Datasets}
+
+We target several publicly available datasets for future experiments and provide ingestion code in this repository:
+\begin{itemize}
+	\item ERA5 reanalysis: hourly gridded meteorological variables (pressure, temperature, wind components, cloud fraction) available from ECMWF. Useful for spatial context.
+	\item NSRDB: station-level irradiance measurements providing high-frequency ground truth for solar generation.
+	\item PV-Live: aggregated PV generation time series for validation against model predictions.
+	\item Wind Power Database: per-turbine or aggregated wind generation data with hub-height wind speeds.
+\end{itemize}
+
+Key preprocessing steps:
+\begin{enumerate}
+	\item Temporal alignment: resample all time series to a common hourly index using nearest-time matching.
+	\item Spatial alignment: map station/turbine coordinates to nearest ERA5 grid points and extract square patches centered on the site.
+	\item Feature engineering: compute clear-sky irradiance, sun zenith angles, and hub-height wind estimates (log-profile or boundary-layer corrections) as additional inputs.
+\end{enumerate}

@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Archives / installers / large binaries
+*.zip
+*.rar
+*.tar
+*.gz
+*.exe
+*.msi
+*.apk
+*.npy
+*.pyc
+
+# Logs
+*.log

@@ -1,0 +1,8 @@
+To compile the final LaTeX file to PDF locally:
+
+1) Ensure you have a LaTeX distribution installed (TeX Live or MikTeX).
+2) From the project root, run (PowerShell):
+
+pdflatex -output-directory paper paper\final.tex
+
+You may need to run pdflatex twice to resolve references. The resulting PDF will be `paper/final.pdf`.

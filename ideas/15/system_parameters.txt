@@ -1,0 +1,34 @@
+System Parameters:
+----------------------------------------
+H1: 5.0
+H2: 4.0
+D1: 0.8
+D2: 0.9
+R1: 0.05
+R2: 0.0625
+Tg1: 0.2
+Tg2: 0.3
+Tt1: 0.5
+Tt2: 0.6
+Tp1: 20.0
+Tp2: 25.0
+B1: 0.425
+B2: 0.396
+T12: 0.545
+
+FACTS Parameters:
+----------------------------------------
+UPFC_Rating: 100.0
+SVC_Rating: 200.0
+SSSC_Rating: 300.0
+STATCOM_Rating: 150.0
+SVC_Time_Constant: 0.04
+SSSC_Time_Constant: 0.02
+STATCOM_Time_Constant: 0.01
+
+Optimized PID Gains:
+----------------------------------------
+kp: 20.0
+ki: 20.0
+kd: 5.0
+

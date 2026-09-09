@@ -1,0 +1,80 @@
+# Nova Scotia V2G Network Configuration (45,000 EVs, 450 Charging Stations)
+# Based on NS 2030 EV deployment targets
+
+v2g_network:
+  total_evs: 45000
+  num_charging_stations: 450
+  evs_per_station: 100
+  
+ev_specifications:
+  battery_capacity_kwh: 60  # Average (Nissan Leaf, Chevy Bolt range)
+  charger_power_kw: 11      # Level 2 bidirectional
+  v2g_enabled_percent: 100
+  
+distribution_topology:
+  base_system: "IEEE_123_bus_expanded"
+  feeders: 450
+  evs_per_transformer: 100
+  
+graph_structure:
+  node_features:
+    - "soc"              # State of charge (%)
+    - "power_draw"       # Active power (kW)
+    - "voltage"          # Bus voltage (p.u.)
+    - "session_duration" # Charging session time (min)
+  
+  edge_weights: "admittance_based"  # Electrical distance
+  
+attack_scenarios:
+  fdi_soc:
+    injection_rates: [0.10, 0.20, 0.30]  # Fraction of compromised EVs
+    bias_range: [-40, 40]  # SOC bias in percentage points
+    duration_min: [30, 60, 120, 360]
+    
+  coordinated_disconnect:
+    num_evs: [100, 500, 1000]
+    trigger_time: "peak_demand"  # 5-7 PM
+    
+  replay_attack:
+    delay_hours: 24
+    
+  dos_attack:
+    packet_loss_rate: [0.30, 0.50, 0.70]
+
+dataset_generation:
+  normal_scenarios: 35000
+  attack_scenarios: 15000
+  total_scenarios: 50000
+  
+  window_length_timesteps: 12  # 3 hours at 15-min resolution
+  sampling_rate_min: 15
+  
+  data_sources:
+    ev_charging_profiles:
+      source: "Pecan_Street_Dataport"
+      homes_with_evs: 1000
+      location: "Austin_TX"
+      adjustment: "NS_climate_scaling"  # Longer winter SOC drain
+    
+    grid_topology:
+      source: "IEEE_123_bus_scaled"
+      scaling_factor: 365.85  # 123 buses → 45,000 EVs
+
+federated_learning:
+  num_stations: 450
+  federation_rounds: 100
+  local_epochs_per_round: 50
+  privacy_epsilon: 2.0
+  privacy_delta: 1e-5
+  gradient_clip_norm: 1.0
+  
+blockchain:
+  platform: "Hyperledger_Fabric"
+  consensus: "Practical_Byzantine_Fault_Tolerance"
+  model_hash_algorithm: "SHA256"
+  storage_frequency: "per_federation_round"
+  
+explainability:
+  method: "SHAP"
+  num_background_samples: 100
+  visualization: "feeder_topology_overlay"

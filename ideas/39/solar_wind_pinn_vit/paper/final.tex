@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\title{Physics-Informed Multi-Modal Foundation Models for Real-Time Solar-Wind Hybrid Forecasting}
+\author{Authors}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{abstract}
+We propose a hybrid physics-informed, multi-modal foundation model that combines Physics-Informed Neural Networks (PINNs) with Vision Transformer (ViT) backbones and multi-level fusion transformers for real-time solar and wind hybrid forecasting. Key contributions: (1) hybrid loss combining data-driven and physics constraints, (2) temporal-spatial attention for multi-site forecasting, and (3) cross-domain pre-training for improved generalization.
+\end{abstract}
+
+\section{Introduction}
+Joint solar and wind forecasting improves grid balancing by leveraging cross-modal information from gridded meteorological fields and local station measurements. Physics-informed losses ensure physically plausible predictions while allowing data-driven flexibility.
+
+\section{Method}
+Our prototype uses a ViT-like patch encoder for ERA5-like gridded inputs, a scalar MLP for local station measurements (irradiance and wind speed), and a fusion head producing joint solar and wind power forecasts. Physics losses include a solar irradiance upper bound and a turbine power-curve regularization term.
+
+\section{Experiments}
+We evaluate a small prototype on synthetic data designed to mimic irradiance and wind-speed driven generation. The training script emits scatter plots and attention visualizations for model introspection.
+
+\section{Results}
+Quantitative metrics (synthetic run):
+\begin{table}[h]
+\centering
+\begin{tabular}{lrr}
+\toprule
+Metric & Solar (W) & Wind (W) \\
+\midrule
+RMSE & 6.35 & 751.13 \\
+MAE  & 5.36 & 641.68 \\
+\bottomrule
+\end{tabular}
+\caption{Prototype performance on synthetic test split.}
+\end{table}
+
+Figure~\ref{fig:pred_vs_gt} shows predicted vs ground truth scatter plots for solar and wind power. Figures~\ref{fig:attn0}--\ref{fig:attn3} show per-layer attention overlays.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\textwidth]{../outputs/pred_vs_gt.png}
+\caption{Predicted vs ground-truth (solar left, wind right).}
+\label{fig:pred_vs_gt}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.45\textwidth]{../outputs/attn_layer_0_head_0.png}
+\caption{Attention overlay: layer 0, head 0.}
+\label{fig:attn0}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.45\textwidth]{../outputs/attn_layer_1_head_0.png}
+\caption{Attention overlay: layer 1, head 0.}
+\label{fig:attn1}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.45\textwidth]{../outputs/attn_layer_2_head_0.png}
+\caption{Attention overlay: layer 2, head 0.}
+\label{fig:attn2}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.45\textwidth]{../outputs/attn_layer_3_head_0.png}
+\caption{Attention overlay: layer 3, head 0.}
+\label{fig:attn3}
+\end{figure}
+
+\section{Conclusion}
+This prototype demonstrates how physics-informed losses and multi-modal fusion can produce reasonable joint forecasts with interpretable attention maps. Future work will replace synthetic data with ERA5/NSRDB/PV-Live/Wind DB and scale the model for production.
+
+\appendix
+\input{sections/appendix}
+
+\end{document}

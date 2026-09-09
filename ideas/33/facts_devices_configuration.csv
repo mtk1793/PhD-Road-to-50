@@ -1,0 +1,5 @@
+Device,Type,Location,Rating_MVA,Active
+SVC_1,SVC,9,50,True
+STATCOM_1,STATCOM,14,30,True
+SSSC_1,SSSC,4,40,True
+UPFC_1,UPFC,6,60,True
